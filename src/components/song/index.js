@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Song=()=>{
+const Song=(props)=>{
 	return(
-		<div>Jedna pesma</div>
+		<div>
+		<div>{props.title}</div>
+		<div>{props.performer}</div>
+		</div>
+
 	)
 }
 

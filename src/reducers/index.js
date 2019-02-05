@@ -1,13 +1,18 @@
 const initialState={
-	songs:[{name:'prva pesma', performer:'neki neko'
+	songs:[{title:'prva pesma', performer:'neki neko', 'id':1
 
-	},{name:'druga pesma', performer:'neko drugi'}],
+	},{title:'druga pesma', performer:'neko drugi', 'id':2}],
 }
 
 const rootReducer=(state=initialState, action)=>{
-    
-	return state;
+    switch (action.type) {
+	case "SONGS":
+    return Object.assign({},state, {songs:action.songs});
 
+    default:
+    return state;
+
+}
 };
 
 export default rootReducer;
