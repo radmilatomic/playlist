@@ -1,9 +1,41 @@
 import React, {Component} from 'react'
+import {setSongs } from "../../actions";
+import { connect } from "react-redux";
 
-class AddSong extends Component{
+
+const mapDispatchToProps = dispatch => {
+  return {
+    
+    setSongs: songs=>dispatch(setSongs(songs))
+  };
+};
+
+
+class ConnectedAddSong extends Component{
+
+	constructor(props) {
+    super(props);
+    this.fetchSongs=this.fetchSongs.bind(this);
+     this.addSong=this.addSong.bind(this);
+     this.setData=this.setData.bind(this);
+     
+  }
+
+  setData(responseData){
+  console.log(responseData);
+  this.props.setSongs(responseData); 
+ }
 
 	fetchSongs(){
-		console.log("song should be added");
+	const url=new URL('https://radmilatomic.pythonanywhere.com/api/songs')
+    const request=new Request(url,{
+    method:'GET',
+    mode:'cors'
+   });
+
+   fetch(request).then(response=>
+     response.json()).then(responseData=>this.setData(responseData))
+     .catch(function(error){console.log(error);})
 	}
 
 	addSong(e){
@@ -32,5 +64,7 @@ class AddSong extends Component{
 	)
 }
 }
+
+const AddSong=connect(null,mapDispatchToProps)(ConnectedAddSong)
 
 export default AddSong
