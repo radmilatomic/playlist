@@ -42,7 +42,7 @@ componentDidMount(){
 	render(){
 		return(
 		<div>
-		{this.props.songs.map((item)=><Song title={item.title} performer={item.performer} key={item.id}/>)}
+		{this.props.songs.map((item)=><Song title={item.title} performer={item.performer} key={item.id} id={item.id}/>)}
 	
 		</div>
 		)
