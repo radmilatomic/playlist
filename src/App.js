@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>ovo je moja playlista</div>
+        <div>ovo je moja playlista, al dodaj i ti nesto slobodno neku pesmu</div>
        <AddSong/>
        <SongList/>
         
