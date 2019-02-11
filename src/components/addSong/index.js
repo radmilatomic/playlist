@@ -56,9 +56,13 @@ class ConnectedAddSong extends Component{
 	render(){
 	return(
 		<form  id="form">
-		Title:<input name="title"></input>
+    <div>
+		Title:<input name="title"></input></div>
+    <div>
 		Performer:<input name="performer"></input>
+
 		<input  type ="submit" value ="Add" onClick={this.addSong}/>
+    </div>
 		</form>
 
 	)

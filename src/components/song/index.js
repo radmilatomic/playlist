@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom';
 import {setSongs } from "../../actions";
 import { connect } from "react-redux";
+import './style.css';
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -56,12 +57,12 @@ class ConnectedSong extends Component{
 
 
 	return(
-		<div>
-		<span>{this.props.title}</span>
-		<span>--------------</span>
-		<span>{this.props.performer}</span>
-		<span>-----</span>
-		<input type="submit" value="Delete" onClick={this.deleteMethod}></input>
+		<div id="songContainer">
+  		<div>{this.props.title}</div>
+  		<div>--------------</div>
+  		<div>{this.props.performer}</div>
+  		<div>-----</div>
+  		<input type="submit" value="Delete" onClick={this.deleteMethod}></input>
 		</div>
 
 	)
