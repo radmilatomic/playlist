@@ -1,7 +1,8 @@
 #songList{
 	border:solid 2px pink;
-	margin:auto;
-	display: inline-block;
+	
+	/*display: inline-block;*/
+	max-width: 600px;
 	padding: 10px;
 	margin: 10px;
 }

@@ -58,10 +58,10 @@ class ConnectedSong extends Component{
 
 	return(
 		<div id="songContainer">
-  		<div>{this.props.title}</div>
-  		<div>--------------</div>
-  		<div>{this.props.performer}</div>
-  		<div>-----</div>
+  		<div id="songTitle">{this.props.title}</div>
+  		
+  		<div id="songPerformer">{this.props.performer}</div>
+  		
   		<input type="submit" value="Delete" onClick={this.deleteMethod}></input>
 		</div>
 
