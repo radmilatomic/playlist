@@ -1,13 +1,15 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom';
-import {setSongs } from "../../actions";
+import {setSongs, renderDeleteSong } from "../../actions";
 import { connect } from "react-redux";
 import './style.css';
+import DeleteModal from "../deleteModal"
 
 const mapDispatchToProps = dispatch => {
   return {
     
-    setSongs: songs=>dispatch(setSongs(songs))
+    setSongs: songs=>dispatch(setSongs(songs)),
+    renderDeleteSong:(flag,id)=>dispatch(renderDeleteSong(flag,id))
   };
 };
 
@@ -41,15 +43,16 @@ class ConnectedSong extends Component{
 
 	deleteMethod(e){
 		e.preventDefault();
-		console.log("deleting will be implemented here");
-		const url=new URL('https://radmilatomic.pythonanywhere.com/api/deletesong/'+this.props.id)
-    	const request=new Request(url,{
-    	method:'GET',
-    	mode:'no-cors'
-   });
+    this.props.renderDeleteSong(true,this.props.item.id);
+		// console.log("deleting will be implemented here");
+		// const url=new URL('https://radmilatomic.pythonanywhere.com/api/deletesong/'+this.props.id)
+  //   	const request=new Request(url,{
+  //   	method:'GET',
+  //   	mode:'no-cors'
+  //  });
 
-   fetch(request).then(()=>this.fetchSongs())
-     .catch(function(error){console.log(error);})
+  //  fetch(request).then(()=>this.fetchSongs())
+  //    .catch(function(error){console.log(error);})
 
    
 	}
@@ -57,13 +60,17 @@ class ConnectedSong extends Component{
 
 
 	return(
+    <div>
 		<div id="songContainer">
-  		<div id="songTitle">{this.props.title}</div>
+  		<div id="songTitle">{this.props.item.title}</div>
   		
-  		<div id="songPerformer">{this.props.performer}</div>
+  		<div id="songPerformer">{this.props.item.performer}</div>
   		
   		<input type="submit" value="Delete" onClick={this.deleteMethod}></input>
 		</div>
+
+    <DeleteModal show={this.props.item.deleteSong}/>
+    </div>
 
 	)
 }

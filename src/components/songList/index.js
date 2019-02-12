@@ -45,7 +45,7 @@ componentDidMount(){
       <div>
       <DeleteModal/>
 		<div id="songList">
-		{this.props.songs.map((item)=><Song title={item.title} performer={item.performer} key={item.id} id={item.id}/>)}
+		{this.props.songs.map((item)=><Song item={item} key={item.id} id={item.id}/>)}
 	
 		</div>
     </div>

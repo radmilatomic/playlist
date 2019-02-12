@@ -28,16 +28,16 @@ class ConnectedDeleteModal extends Component{
   }
 
 	render(){
-    if(this.props.deleteSong===true){
+    if(this.props.show){
       
       
       return ReactDOM.createPortal(
         <div className='modal' id="delete-form">
          
             <div className="buttonsWrapper">
-              <div>Are you sure you want to delete?</div>
-              <input className="buttonDetails" type="submit" value="YES" onClick={this.deleteMethod}/>
-              <input className="buttonDetails" type ="submit" value ="NO" onClick={this.exitDelete}/>
+              <div>Je l ti Rada dala sifru za brisanje?</div>
+              <input className="buttonDetails" type="submit" value="Aham" onClick={this.deleteMethod}/>
+              <input className="buttonDetails" type ="submit" value ="Nije :(" onClick={this.exitDelete}/>
               </div>
             
         </div>,
