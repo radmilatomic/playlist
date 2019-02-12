@@ -1,4 +1,5 @@
 const initialState={
+	deleteSong:false,
 	songs:[{title:'prva pesma', performer:'neki neko', 'id':1
 
 	},{title:'druga pesma', performer:'neko drugi', 'id':2}],

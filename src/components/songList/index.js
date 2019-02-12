@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import './style.css';
 import { setSongs} from "../../actions";
 import Song from '../song'
+import DeleteModal from "../deleteModal"
 
 const mapDispatchToProps = dispatch => {
  return {
@@ -41,10 +42,13 @@ componentDidMount(){
 
 	render(){
 		return(
+      <div>
+      <DeleteModal/>
 		<div id="songList">
 		{this.props.songs.map((item)=><Song title={item.title} performer={item.performer} key={item.id} id={item.id}/>)}
 	
 		</div>
+    </div>
 		)
 	}
 }
