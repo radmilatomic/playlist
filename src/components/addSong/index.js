@@ -50,16 +50,17 @@ class ConnectedAddSong extends Component{
    });
    fetch(request).then(()=>this.fetchSongs())
      .catch(function(error){console.log(error);})
-
+     this.inputTitle.value="";
+     this.inputPerformer.value="";
   
 	}
 	render(){
 	return(
 		<form  id="form">
     <div>
-		Title:<input name="title"></input></div>
+		Title:<input name="title" ref={(a) => this.inputTitle = a}></input></div>
     <div>
-		Performer:<input name="performer"></input>
+		Performer:<input name="performer" ref={(a) => this.inputPerformer = a}></input>
 
 		<input  type ="submit" value ="Add" onClick={this.addSong}/>
     </div>

@@ -1,5 +1,9 @@
 const initialState={
     showApp:true,
+    showAddModal:false,
+    showDenyAddModal:false,
+    showConfirmAddPassword:false,
+    
 	
 	songs:[{title:'prva pesma', performer:'neki neko', 'id':1
 
