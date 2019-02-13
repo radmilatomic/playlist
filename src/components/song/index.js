@@ -1,15 +1,24 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom';
-import {setSongs, renderDeleteSong } from "../../actions";
+import {setSongs} from "../../actions";
 import { connect } from "react-redux";
 import './style.css';
 import DeleteModal from "../deleteModal"
+import DenyModal from "../denyModal"
+import ConfirmPasswordModal from "../confirmPasswordModal"
+import WrongPasswordModal from "../wrongPasswordModal"
+
+const mapStateToProps = state => {
+ return { songs: state.songs
+  }
+}
+
 
 const mapDispatchToProps = dispatch => {
   return {
     
     setSongs: songs=>dispatch(setSongs(songs)),
-    renderDeleteSong:(flag,id)=>dispatch(renderDeleteSong(flag,id))
+    
   };
 };
 
@@ -43,8 +52,19 @@ class ConnectedSong extends Component{
 
 	deleteMethod(e){
 		e.preventDefault();
-    this.props.renderDeleteSong(true,this.props.item.id);
-		// console.log("deleting will be implemented here");
+	  console.log("deleteMethod#Song");
+    const newSongs=this.props.songs.map(item=>{
+      if(item.id===this.props.item.id){
+        return {...item, deleteSong:true}
+      }
+      else{
+        return item
+      }
+    });
+    this.props.setSongs(newSongs);
+
+
+
 		// const url=new URL('https://radmilatomic.pythonanywhere.com/api/deletesong/'+this.props.id)
   //   	const request=new Request(url,{
   //   	method:'GET',
@@ -69,12 +89,15 @@ class ConnectedSong extends Component{
   		<input type="submit" value="Delete" onClick={this.deleteMethod}></input>
 		</div>
 
-    <DeleteModal show={this.props.item.deleteSong}/>
+    <DeleteModal show={this.props.item.deleteSong} id={this.props.item.id}/>
+    <DenyModal show={this.props.item.denyDelete} id={this.props.item.id}/>
+    <ConfirmPasswordModal show={this.props.item.confirmPassword} id={this.props.item.id}/>
+    <WrongPasswordModal show={this.props.item.wrongPassword} id={this.props.item.id}/>
     </div>
 
 	)
 }
 }
 
-const Song=connect(null,mapDispatchToProps)(ConnectedSong)
+const Song=connect(mapStateToProps,mapDispatchToProps)(ConnectedSong)
 export default Song

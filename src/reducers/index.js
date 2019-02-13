@@ -10,8 +10,7 @@ const rootReducer=(state=initialState, action)=>{
 	case "SONGS":
     return Object.assign({},state, {songs:action.songs});
 
-    case "DELETE_SONG":
-     return {...state, songs:{...state.songs,[action.id]:{...state.songs[action.id],deleteSong:action.flag}}}
+    
 
     default:
     return state;

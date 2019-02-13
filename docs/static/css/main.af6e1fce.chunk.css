@@ -1,2 +1,2 @@
 body{display:flex;margin:auto;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#353232;color:#fff;justify-content:center}code{font-family:source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace}.App{text-align:center}#songContainer{display:flex;align-content:center;padding-top:3px;border-bottom:1px solid pink}#songContainer>div{padding-right:20px}#songPerformer,#songTitle{width:40%}#songList{border:2px solid pink;max-width:600px;padding:10px;margin:10px}
-/*# sourceMappingURL=main.c019a3ec.chunk.css.map */
+/*# sourceMappingURL=main.af6e1fce.chunk.css.map */

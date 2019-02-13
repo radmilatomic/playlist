@@ -5,6 +5,8 @@ import {setSongs} from "../../actions";
 
 const mapStateToProps = state => {
   return { songs: state.songs,
+        
+            
              };
 };
 
@@ -16,21 +18,21 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class ConnectedDenyModal extends Component{
+class ConnectedWrongPasswordModal extends Component{
 
 	constructor(props) {
     super(props);
-    
-    this.denyOK=this.denyOK.bind(this);
+    this.accept=this.accept.bind(this);
+
   
     this.modalRoot = document.getElementById('modal-root');
   }
 
-  denyOK(){
-    console.log("denyOK#denyModal");
+  accept(){
+    console.log("accept#wrongPasswordModal");
     const newSongs=this.props.songs.map(item=>{
       if(item.id===this.props.id){
-        return {...item, denyDelete:false}
+        return {...item, wrongPassword:false}
       }
       else{
         return item
@@ -42,16 +44,16 @@ class ConnectedDenyModal extends Component{
    
 
 	render(){
-    if(this.props.show===true){
+    if(this.props.show){
       
       
       return ReactDOM.createPortal(
-        <div className='modal' id="denyModal">
+        <div className='modal' id="wrongPasswordInfo">
          
             <div className="buttonsWrapper">
-              <div>Ma nema veze, brisanje je ionako bezveze</div>
-              <input type="submit" value="Ok" onClick={this.denyOK}></input>
-          
+              <div>Ok, ne znas ipak sifru, al Rada nije to lepo ni sakrila, mozes lako da je provalis</div>
+             <input type="submit" value="Hm,hvala" onClick={this.accept}></input>
+              
               </div>
             
         </div>,
@@ -62,6 +64,6 @@ class ConnectedDenyModal extends Component{
   }
 }
 
-const DenyModal=connect(mapStateToProps,mapDispatchToProps)(ConnectedDenyModal)
+const WrongPasswordModal=connect(mapStateToProps,mapDispatchToProps)(ConnectedWrongPasswordModal)
 
-export default DenyModal
+export default WrongPasswordModal

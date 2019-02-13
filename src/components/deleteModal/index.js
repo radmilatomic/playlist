@@ -1,12 +1,21 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom';
 import { connect } from "react-redux";
+import {setSongs} from "../../actions";
 
 const mapStateToProps = state => {
-  return { deleteSong: state.deleteSong,
+  return { songs: state.songs,
         
             
              };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    
+    setSongs: songs=>dispatch(setSongs(songs)),
+    
+  };
 };
 
 class ConnectedDeleteModal extends Component{
@@ -14,17 +23,35 @@ class ConnectedDeleteModal extends Component{
 	constructor(props) {
     super(props);
     this.exitDelete=this.exitDelete.bind(this);
-    this.deleteMethod=this.deleteMethod.bind(this);
+    this.ahamMethod=this.ahamMethod.bind(this);
   
     this.modalRoot = document.getElementById('modal-root');
   }
 
   exitDelete(){
-    console.log("exitDelete#deleteModal")
+    console.log("exitDelete#deleteModal");
+    const newSongs=this.props.songs.map(item=>{
+      if(item.id===this.props.id){
+        return {...item, denyDelete:true, deleteSong:false}
+      }
+      else{
+        return item
+      }
+    });
+    this.props.setSongs(newSongs);
   }
 
-   deleteMethod(){
-    console.log("deleteMethod#deleteModal")
+   ahamMethod(){
+    console.log("ahamMethod#deleteModal");
+     const newSongs=this.props.songs.map(item=>{
+      if(item.id===this.props.id){
+        return {...item, confirmPassword:true, deleteSong:false}
+      }
+      else{
+        return item
+      }
+    });
+    this.props.setSongs(newSongs);
   }
 
 	render(){
@@ -36,7 +63,7 @@ class ConnectedDeleteModal extends Component{
          
             <div className="buttonsWrapper">
               <div>Je l ti Rada dala sifru za brisanje?</div>
-              <input className="buttonDetails" type="submit" value="Aham" onClick={this.deleteMethod}/>
+              <input className="buttonDetails" type="submit" value="Aham" onClick={this.ahamMethod}/>
               <input className="buttonDetails" type ="submit" value ="Nije :(" onClick={this.exitDelete}/>
               </div>
             
@@ -48,6 +75,6 @@ class ConnectedDeleteModal extends Component{
   }
 }
 
-const DeleteModal=connect(mapStateToProps,null)(ConnectedDeleteModal)
+const DeleteModal=connect(mapStateToProps,mapDispatchToProps)(ConnectedDeleteModal)
 
 export default DeleteModal

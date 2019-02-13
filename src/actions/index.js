@@ -3,9 +3,3 @@ export const setSongs=songs=>(
     songs:songs}
     )
 
-export const renderDeleteSong=(flag,id)=>(
-    {type:"DELETE_SONG",
-    flag:flag,
-	id:id		
-			}
-    )
