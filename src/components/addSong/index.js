@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import AddModal from "../addModal";
 import DenyAddModal from "../denyAddModal";
 import ConfirmPasswordAddModal from "../confirmPasswordAddModal";
+import WrongPasswordAddModal from "../wrongPasswordAddModal"
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -19,7 +20,8 @@ const mapStateToProps = state => {
           showApp:state.showApp,
           showAddModal:state.showAddModal,
           showDenyAddModal:state.showDenyAddModal,
-          showConfirmAddPassword:state.showConfirmAddPassword
+          showConfirmAddPassword:state.showConfirmAddPassword,
+          showWrongPasswordAddModal:state.showWrongPasswordAddModal
   }
 }
 
@@ -70,6 +72,19 @@ class ConnectedAddSong extends Component{
   
 	}
 	render(){
+    if(this.inputTitle){
+      const title=this.inputTitle
+    }
+    else{
+      const title=""
+    }
+
+    if(this.inputPerformer){
+      const performer=this.inputPerformer.value
+    }
+    else{
+      const performer='';
+    }
 	return(
     <div>
 		<form  id="form">
@@ -84,7 +99,8 @@ class ConnectedAddSong extends Component{
 
     <AddModal show={this.props.showAddModal}/>
     <DenyAddModal show={this.props.showDenyAddModal}/>
-    <ConfirmPasswordAddModal show={this.props.showConfirmAddPassword}/>
+    <ConfirmPasswordAddModal show={this.props.showConfirmAddPassword} title={this.title} performer={this.performer}/>
+    <WrongPasswordAddModal show={this.props.showWrongPasswordAddModal}/>
     </div>
 
 	)

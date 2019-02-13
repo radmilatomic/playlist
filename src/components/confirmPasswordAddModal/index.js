@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom';
 import { connect } from "react-redux";
-import {setSongs, showList} from "../../actions";
+import {setSongs, showList,showWrongAddPasswordAction, showConfirmAddPasswordAction} from "../../actions";
 
 const mapStateToProps = state => {
   return { songs: state.songs,
@@ -12,7 +12,9 @@ const mapDispatchToProps = dispatch => {
   return {
     
     setSongs: songs=>dispatch(setSongs(songs)),
-    showList:flag=>dispatch(showList(flag))
+    showList:flag=>dispatch(showList(flag)),
+    showWrongAddPasswordAction:flag=>dispatch(showWrongAddPasswordAction(flag)),
+    showConfirmAddPasswordAction:flag=>dispatch(showConfirmAddPasswordAction(flag))
   };
 };
 
@@ -46,7 +48,26 @@ class ConnectedConfirmPasswordAddModal extends Component{
   confirmPassword(){
     console.log("confirmPassword#ConfirmedPasswordAddModal");
     console.log(this.inputPassword.value);
-    
+    if(this.inputPassword.value==="sifrujelakoprovaliti"){
+      console.log("sifra je dobra");
+       var form=new FormData(document.getElementById('form'))
+       form.append("title",this.props.title);
+       form.append("performer", this.props.performer)
+   const url=new URL('https://radmilatomic.pythonanywhere.com/api/addsong')
+   const request=new Request(url,{
+    method:'POST',
+    body:form,
+    mode:'cors'
+   });
+   fetch(request).then(()=>this.fetchSongs())
+     .catch(function(error){console.log(error);})
+     this.props.showList(true);
+
+    }
+    else{
+      this.props.showWrongAddPasswordAction(true);
+      this.props.showConfirmAddPasswordAction(false);
+    }
    
   }
 
