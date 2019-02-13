@@ -1,4 +1,5 @@
 const initialState={
+    showApp:true,
 	
 	songs:[{title:'prva pesma', performer:'neki neko', 'id':1
 
@@ -10,7 +11,8 @@ const rootReducer=(state=initialState, action)=>{
 	case "SONGS":
     return Object.assign({},state, {songs:action.songs});
 
-    
+    case "SHOW_LIST":
+    return Object.assign({},state, {showApp:action.flag});
 
     default:
     return state;

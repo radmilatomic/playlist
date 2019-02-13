@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom';
-import {setSongs} from "../../actions";
+import {setSongs, showList} from "../../actions";
 import { connect } from "react-redux";
 import './style.css';
 import DeleteModal from "../deleteModal"
@@ -9,7 +9,8 @@ import ConfirmPasswordModal from "../confirmPasswordModal"
 import WrongPasswordModal from "../wrongPasswordModal"
 
 const mapStateToProps = state => {
- return { songs: state.songs
+ return { songs: state.songs,
+          showApp:state.showApp
   }
 }
 
@@ -18,6 +19,7 @@ const mapDispatchToProps = dispatch => {
   return {
     
     setSongs: songs=>dispatch(setSongs(songs)),
+    showList:flag=>dispatch(showList(flag))
     
   };
 };
@@ -62,6 +64,7 @@ class ConnectedSong extends Component{
       }
     });
     this.props.setSongs(newSongs);
+    this.props.showList(false);
 
 
 
@@ -78,24 +81,33 @@ class ConnectedSong extends Component{
 	}
 	render(){
 
-
-	return(
-    <div>
-		<div id="songContainer">
-  		<div id="songTitle">{this.props.item.title}</div>
-  		
-  		<div id="songPerformer">{this.props.item.performer}</div>
-  		
-  		<input type="submit" value="Delete" onClick={this.deleteMethod}></input>
-		</div>
-
-    <DeleteModal show={this.props.item.deleteSong} id={this.props.item.id}/>
+    const modals=<div>
+      <DeleteModal show={this.props.item.deleteSong} id={this.props.item.id}/>
     <DenyModal show={this.props.item.denyDelete} id={this.props.item.id}/>
     <ConfirmPasswordModal show={this.props.item.confirmPassword} id={this.props.item.id}/>
     <WrongPasswordModal show={this.props.item.wrongPassword} id={this.props.item.id}/>
     </div>
 
-	)
+if(this.props.showApp){
+  return(
+    <div>
+    <div id="songContainer">
+      <div id="songTitle">{this.props.item.title}</div>
+      
+      <div id="songPerformer">{this.props.item.performer}</div>
+      
+      <input type="submit" value="Delete" onClick={this.deleteMethod}></input>
+    </div>
+    {modals}
+    
+    </div>
+
+  )
+}
+else{
+  return modals
+}
+	
 }
 }
 

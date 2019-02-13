@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom';
 import { connect } from "react-redux";
-import {setSongs} from "../../actions";
+import {setSongs, showList} from "../../actions";
 
 const mapStateToProps = state => {
   return { songs: state.songs,
@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => {
   return {
     
     setSongs: songs=>dispatch(setSongs(songs)),
-    
+    showList:flag=>dispatch(showList(flag))
   };
 };
 
@@ -64,7 +64,7 @@ class ConnectedConfirmPasswordModal extends Component{
       }
     });
     this.props.setSongs(newSongs);
-
+     this.props.showList(true);
     }
     else{
       console.log("nije dobra sifra");
