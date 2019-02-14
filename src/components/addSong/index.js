@@ -33,6 +33,10 @@ class ConnectedAddSong extends Component{
     this.fetchSongs=this.fetchSongs.bind(this);
      this.addSong=this.addSong.bind(this);
      this.setData=this.setData.bind(this);
+     this.setRef=this.setRef.bind(this);
+     this.clearInput=this.clearInput.bind(this);
+     this.performer="";
+     this.title="";
      
   }
 
@@ -40,6 +44,20 @@ class ConnectedAddSong extends Component{
   console.log(responseData);
   this.props.setSongs(responseData); 
  }
+
+ setRef(inputTitle,inputPerformer) {
+        this.performer= inputPerformer;
+        this.title=inputTitle;
+        
+    }
+
+  clearInput(){
+    this.inputTitle.value="";
+    this.inputPerformer.value="";
+   
+
+  }
+
 
 	fetchSongs(){
 	const url=new URL('https://radmilatomic.pythonanywhere.com/api/songs')
@@ -55,7 +73,9 @@ class ConnectedAddSong extends Component{
 
 	addSong(e){
 		console.log("song will be added here");
-		e.preventDefault()
+		e.preventDefault();
+    this.setRef(this.inputTitle.value,this.inputPerformer.value);
+
    //  var form=new FormData(document.getElementById('form'))
    // const url=new URL('https://radmilatomic.pythonanywhere.com/api/addsong')
    // const request=new Request(url,{
@@ -65,26 +85,14 @@ class ConnectedAddSong extends Component{
    // });
    // fetch(request).then(()=>this.fetchSongs())
    //   .catch(function(error){console.log(error);})
-     this.inputTitle.value="";
-     this.inputPerformer.value="";
+      //this.inputTitle.value="";
+      //this.inputPerformer.value="";
      this.props.showAddModalAction(true);
      this.props.showList(false);
   
 	}
 	render(){
-    if(this.inputTitle){
-      const title=this.inputTitle
-    }
-    else{
-      const title=""
-    }
-
-    if(this.inputPerformer){
-      const performer=this.inputPerformer.value
-    }
-    else{
-      const performer='';
-    }
+   
 	return(
     <div>
 		<form  id="form">

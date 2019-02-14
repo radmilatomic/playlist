@@ -52,7 +52,7 @@ class ConnectedConfirmPasswordAddModal extends Component{
       console.log("sifra je dobra");
        var form=new FormData(document.getElementById('form'))
        form.append("title",this.props.title);
-       form.append("performer", this.props.performer)
+       form.append("performer", this.props.performer);
    const url=new URL('https://radmilatomic.pythonanywhere.com/api/addsong')
    const request=new Request(url,{
     method:'POST',
@@ -62,6 +62,7 @@ class ConnectedConfirmPasswordAddModal extends Component{
    fetch(request).then(()=>this.fetchSongs())
      .catch(function(error){console.log(error);})
      this.props.showList(true);
+     this.props.showConfirmAddPasswordAction(false);
 
     }
     else{
