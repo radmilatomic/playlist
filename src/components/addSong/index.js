@@ -97,15 +97,19 @@ class ConnectedAddSong extends Component{
    
 	return(
     <div>
-		<form  id="form">
-    <div>
-		Title:<input name="title" ref={(a) => this.inputTitle = a}></input></div>
-    <div>
-		Performer:<input name="performer" ref={(a) => this.inputPerformer = a}></input>
-
-		<input  type ="submit" value ="Add" onClick={(this.addSong)}/>
+		<form  id="add-form">
+    <div class="addWrapper">
+  		<div>Title:</div>
+      <input name="title" id="title" ref={(a) => this.inputTitle = a}></input>
     </div>
+    <div class="addWrapper">
+		<div>Performer:</div>
+    <input name="performer" id="performer" ref={(a) => this.inputPerformer = a}></input>
+    </div>
+		<input id="addSong" type ="submit" value ="Add" onClick={(this.addSong)}/>
+    
 		</form>
+
 
     <AddModal show={this.props.showAddModal}/>
     <DenyAddModal show={this.props.showDenyAddModal}/>

@@ -4,7 +4,7 @@ body {
 margin:auto;
 
  
-  font-family: 'Lato',sans-serif;
+  font-family: 'Staatliches',sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,5 +23,49 @@ code {
 }
 
 input{
-  font-family: 'Lato',sans-serif;
+  font-family: 'Staatliches',sans-serif;
+  margin-left: 5px;
+}
+
+#heading{
+  margin:10px;
+}
+
+#title{
+  
+}
+
+#performer{
+
+}
+
+.addWrapper{
+  display:flex;
+  padding:5px;
+  justify-content: space-between;
+}
+
+#add-form{
+  display: inline-block;
+}
+
+.modal {
+  width: 300px;
+  height:250px;
+  position: absolute;
+  top:10px;
+  background-color: #353232;
+  /*margin: 9px auto;*/
+  z-index: 2;
+  border: solid pink  2px;
+  border-radius: 10px;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  
+}
+
+.modal div{
+  padding-bottom: 20px;
 }

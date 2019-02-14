@@ -7,3 +7,8 @@
 	margin: 10px;
 }
 
+#addSong:hover{
+	cursor: pointer;
+
+}
+
