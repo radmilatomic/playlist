@@ -45,9 +45,10 @@ class ConnectedAddSong extends Component{
   this.props.setSongs(responseData); 
  }
 
- setRef(inputTitle,inputPerformer) {
-        this.performer= inputPerformer;
-        this.title=inputTitle;
+ setRef(title,performer) {
+        this.performer= performer;
+        this.title=title;
+        
         
     }
 
@@ -89,7 +90,8 @@ class ConnectedAddSong extends Component{
       //this.inputPerformer.value="";
      this.props.showAddModalAction(true);
      this.props.showList(false);
-  
+
+   
 	}
 	render(){
    
@@ -101,7 +103,7 @@ class ConnectedAddSong extends Component{
     <div>
 		Performer:<input name="performer" ref={(a) => this.inputPerformer = a}></input>
 
-		<input  type ="submit" value ="Add" onClick={this.addSong}/>
+		<input  type ="submit" value ="Add" onClick={(this.addSong)}/>
     </div>
 		</form>
 

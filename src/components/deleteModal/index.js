@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom';
 import { connect } from "react-redux";
 import {setSongs} from "../../actions";
+import './style.css';
 
 const mapStateToProps = state => {
   return { songs: state.songs,

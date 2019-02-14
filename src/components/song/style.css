@@ -1,4 +1,4 @@
-#songContainer{
+.songContainer{
 	display: flex;
 	align-content: center;
 	/*justify-content:space-between;*/
@@ -7,15 +7,20 @@
 
 }
 
-#songContainer > div{
+.songContainer > div{
 	padding-right: 20px;
 
 }
 
-#songTitle{
+.songTitle{
 	width:40%;
 }
 
-#songPerformer{
+.songPerformer{
 	width:40%;
+}
+
+.deleteButton:hover{
+	cursor:pointer;
+	color:pink;
 }

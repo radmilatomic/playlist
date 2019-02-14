@@ -7,6 +7,7 @@ import DeleteModal from "../deleteModal"
 import DenyModal from "../denyModal"
 import ConfirmPasswordModal from "../confirmPasswordModal"
 import WrongPasswordModal from "../wrongPasswordModal"
+import 'material-icons'
 
 const mapStateToProps = state => {
  return { songs: state.songs,
@@ -91,12 +92,15 @@ class ConnectedSong extends Component{
 if(this.props.showApp){
   return(
     <div>
-    <div id="songContainer">
-      <div id="songTitle">{this.props.item.title}</div>
+    <div class="songContainer">
+      <div class="songTitle">{this.props.item.title}</div>
       
-      <div id="songPerformer">{this.props.item.performer}</div>
+      <div class="songPerformer">{this.props.item.performer}</div>
       
-      <input type="submit" value="Delete" onClick={this.deleteMethod}></input>
+      <div class="deleteButton" onClick={this.deleteMethod}><i class="material-icons">
+        clear
+      </i></div>
+      
     </div>
     {modals}
     
