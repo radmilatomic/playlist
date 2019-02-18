@@ -50,7 +50,8 @@ class ConnectedConfirmPasswordAddModal extends Component{
     console.log(this.inputPassword.value);
     if(this.inputPassword.value==="sifrujelakoprovaliti"){
       console.log("sifra je dobra");
-       var form=new FormData(document.getElementById('form'))
+       // var form=new FormData(document.getElementById('form'))
+      var form=new FormData();
        form.append("title",this.props.title);
        form.append("performer", this.props.performer);
    const url=new URL('https://radmilatomic.pythonanywhere.com/api/addsong')
@@ -82,7 +83,7 @@ class ConnectedConfirmPasswordAddModal extends Component{
         <div className='modal' id="confirmPasswordModal">
           <div className="buttonsWrapper">Da cujem, koja je sifra</div>
             <div className="buttonsWrapper">
-              <input className="buttonDetails" type="password" ref={(a) => this.inputPassword = a}></input>
+              <input className="enterPassword" type="password" ref={(a) => this.inputPassword = a}></input>
               
             </div>
             <input className="buttonDetails" type="submit" value="Submit" onClick={this.confirmPassword}></input>

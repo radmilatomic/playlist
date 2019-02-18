@@ -97,12 +97,12 @@ class ConnectedAddSong extends Component{
 	render(){
     
       const add=<form  id="add-form">
-    <div class="addWrapper">
-      <div class="label">Title:</div>
+    <div className="addWrapper">
+      <div className="label">Title:</div>
       <input name="title" id="title" ref={(a) => this.inputTitle = a}></input>
     </div>
-    <div class="addWrapper">
-    <div class="label">Performer:</div>
+    <div className="addWrapper">
+    <div className="label">Performer:</div>
     <input name="performer" id="performer" ref={(a) => this.inputPerformer = a}></input>
     </div>
     <input id="addSong" type ="submit" value ="ADD" onClick={(this.addSong)}/>

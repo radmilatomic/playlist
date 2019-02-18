@@ -83,15 +83,15 @@ class ConnectedSong extends Component{
 if(this.props.showApp){
   return(
     <div>
-    <div class="songContainer">
-    <i class="material-icons" style={{color:"pink"}}>
+    <div className="songContainer">
+    <i className="material-icons" style={{color:"pink"}}>
 music_note
 </i>
-      <div class="songTitle">{this.props.item.title}</div>
+      <div className="songTitle">{this.props.item.title}</div>
       
-      <div class="songPerformer">{this.props.item.performer}</div>
+      <div className="songPerformer">{this.props.item.performer}</div>
       
-      <div class="deleteButton" onClick={this.deleteMethod}><i class="material-icons">
+      <div className="deleteButton" onClick={this.deleteMethod}><i className="material-icons">
         clear
       </i></div>
       
