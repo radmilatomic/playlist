@@ -52,7 +52,7 @@ input{
 .modal {
  
   height:250px;
-  max-width:320px;
+  width:320px;
   top:10px;
   background-color: #353232;
   position: absolute;
@@ -66,6 +66,7 @@ input{
   justify-content: center;
   margin:0 5px 0 5px;
   padding-left: 10px;
+  padding-right: 10px;
   margin-left:-170px;
     left:50%;
  

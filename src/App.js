@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div id='heading'>Radina playlista</div>
+        <div id='heading'>RADINA PLAYLISTA</div>
        <AddSong/>
        <SongList/>
         
