@@ -93,6 +93,9 @@ if(this.props.showApp){
   return(
     <div>
     <div class="songContainer">
+    <i class="material-icons" style={{color:"pink"}}>
+music_note
+</i>
       <div class="songTitle">{this.props.item.title}</div>
       
       <div class="songPerformer">{this.props.item.performer}</div>
