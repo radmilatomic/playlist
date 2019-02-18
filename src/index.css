@@ -1,20 +1,11 @@
 body {
-
-	
-
-
- 
   font-family: 'Staatliches',sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   background-color: #353232;
   color:white;
-
   justify-content: center;
-
-
 }
 
 code {
@@ -50,7 +41,6 @@ input{
 }
 
 .modal {
- 
   height:250px;
   width:320px;
   top:10px;
@@ -68,10 +58,8 @@ input{
   padding-left: 10px;
   padding-right: 10px;
   margin-left:-170px;
-    left:50%;
- 
-
-  
+  left:50%;
+  font-size: 18px;
 }
 
 .modal div{
@@ -83,3 +71,12 @@ input{
   flex-direction: row;
   
 }
+
+.buttonDetails{
+  font-size: 18px;
+  margin:10px;
+  height:40px;
+  padding:0 20px 0 20px;
+}
+
+

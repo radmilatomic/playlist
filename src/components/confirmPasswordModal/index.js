@@ -92,8 +92,8 @@ class ConnectedConfirmPasswordModal extends Component{
          
             <div className="buttonsWrapper">
               <div>Da cujem, koja je sifra</div>
-              <input type="password" ref={(a) => this.inputPassword = a}></input>
-              <input type="submit" value="Submit" onClick={this.confirmPassword}></input>
+              <input className="buttonDetails" type="password" ref={(a) => this.inputPassword = a}></input>
+              <input className="buttonDetails" type="submit" value="Submit" onClick={this.confirmPassword}></input>
           
               </div>
             

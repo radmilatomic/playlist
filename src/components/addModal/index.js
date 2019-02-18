@@ -61,8 +61,10 @@ exitAddModal(e){
          
             <div className="buttonsWrapper">
               <div>Je l ti Rada dala dozvolu da dodajes pesme?</div>
-              <input className="buttonDetails" type="submit" value="Aham" onClick={this.ahamMethod}/>
-              <input className="buttonDetails" type ="submit" value ="Nije :(" onClick={this.exitAddModal}/>
+               <div className="buttonsWrapper">
+                  <input className="buttonDetails" type="submit" value="Aham" onClick={this.ahamMethod}/>
+                  <input className="buttonDetails" type ="submit" value ="Nije :(" onClick={this.exitAddModal}/>
+                </div>
               </div>
             
         </div>,

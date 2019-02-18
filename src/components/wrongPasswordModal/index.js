@@ -53,7 +53,7 @@ class ConnectedWrongPasswordModal extends Component{
          
             <div className="buttonsWrapper">
               <div>Ok, ne znas ipak sifru, al Rada nije to lepo ni sakrila, mozes lako da je provalis</div>
-             <input type="submit" value="Hm,hvala" onClick={this.accept}></input>
+             <input className="buttonDetails" type="submit" value="Hm,hvala" onClick={this.accept}></input>
               
               </div>
             

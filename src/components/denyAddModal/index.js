@@ -45,7 +45,7 @@ class ConnectedDenyAddModal extends Component{
          
             <div className="buttonsWrapper">
               <div>Ma nema veze, dodavanje je ionako bezveze</div>
-              <input type="submit" value="Ok" onClick={this.denyOK}></input>
+              <input className="buttonDetails" type="submit" value="Ok" onClick={this.denyOK}></input>
           
               </div>
             

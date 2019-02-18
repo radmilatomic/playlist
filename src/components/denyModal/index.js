@@ -51,7 +51,7 @@ class ConnectedDenyModal extends Component{
          
             <div className="buttonsWrapper">
               <div>Ma nema veze, brisanje je ionako bezveze</div>
-              <input type="submit" value="Ok" onClick={this.denyOK}></input>
+              <input className="buttonDetails" type="submit" value="Ok" onClick={this.denyOK}></input>
           
               </div>
             
