@@ -82,7 +82,7 @@ input{
 }
 
 .buttonDetails:hover{
-  background-color: white;
+  background-color: pink;
   cursor: pointer;
 }
 
@@ -93,7 +93,6 @@ input{
 }
 
 input[type='password']{
-  
-}
 
+}
 
