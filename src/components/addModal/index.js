@@ -59,8 +59,8 @@ exitAddModal(e){
       return ReactDOM.createPortal(
         <div className='modal' id="addModal">
          
-            <div className="buttonsWrapper">
-              <div>Je l ti Rada dala dozvolu da dodajes pesme?</div>
+            <div>
+              <div className="buttonsWrapper">Je l ti Rada dala dozvolu da dodajes pesme?</div>
                <div className="buttonsWrapper">
                   <input className="buttonDetails" type="submit" value="Aham" onClick={this.ahamMethod}/>
                   <input className="buttonDetails" type ="submit" value ="Nije :(" onClick={this.exitAddModal}/>

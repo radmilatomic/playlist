@@ -42,13 +42,10 @@ class ConnectedDenyAddModal extends Component{
       
       return ReactDOM.createPortal(
         <div className='modal' id="denyModal">
-         
-            <div className="buttonsWrapper">
-              <div>Ma nema veze, dodavanje je ionako bezveze</div>
-              <input className="buttonDetails" type="submit" value="Ok" onClick={this.denyOK}></input>
-          
-              </div>
-            
+          <div className="buttonsWrapper">Ma nema veze, dodavanje je ionako bezveze</div>
+          <div className="buttonsWrapper">
+            <input className="buttonDetails" type="submit" value="Ok" onClick={this.denyOK}></input>
+          </div>
         </div>,
       this.modalRoot
     );

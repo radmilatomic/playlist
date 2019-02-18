@@ -61,14 +61,11 @@ class ConnectedDeleteModal extends Component{
       
       return ReactDOM.createPortal(
         <div className='modal' id="delete-form">
-         
-            
-              <div className="info-message">Je l ti Rada dala sifru za brisanje?</div>
-              <div className="buttonsWrapper">
-                <input className="buttonDetails" type="submit" value="Aham" onClick={this.ahamMethod}/>
-                <input className="buttonDetails" type ="submit" value ="Nije :(" onClick={this.exitDelete}/>
-             </div>
-            
+          <div className="buttonsWrapper">Je l ti Rada dala sifru za brisanje?</div>
+          <div className="buttonsWrapper">
+            <input className="buttonDetails" type="submit" value="Aham" onClick={this.ahamMethod}/>
+            <input className="buttonDetails" type ="submit" value ="Nije :(" onClick={this.exitDelete}/>
+          </div>
         </div>,
       this.modalRoot
     );
