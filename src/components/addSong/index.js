@@ -95,30 +95,40 @@ class ConnectedAddSong extends Component{
    
 	}
 	render(){
-   
-	return(
-    <div>
-		<form  id="add-form">
+    
+      const add=<form  id="add-form">
     <div class="addWrapper">
-  		<div class="label">Title:</div>
+      <div class="label">Title:</div>
       <input name="title" id="title" ref={(a) => this.inputTitle = a}></input>
     </div>
     <div class="addWrapper">
-		<div class="label">Performer:</div>
+    <div class="label">Performer:</div>
     <input name="performer" id="performer" ref={(a) => this.inputPerformer = a}></input>
     </div>
-		<input id="addSong" type ="submit" value ="ADD" onClick={(this.addSong)}/>
+    <input id="addSong" type ="submit" value ="ADD" onClick={(this.addSong)}/>
     
-		</form>
-
-
-    <AddModal show={this.props.showAddModal}/>
-    <DenyAddModal show={this.props.showDenyAddModal}/>
-    <ConfirmPasswordAddModal show={this.props.showConfirmAddPassword} title={this.title} performer={this.performer}/>
-    <WrongPasswordAddModal show={this.props.showWrongPasswordAddModal}/>
+    </form>
+   
+   if(this.props.showApp){
+    return(
+      <div id="addItems">
+        {add}
+        <AddModal show={this.props.showAddModal}/>
+        <DenyAddModal show={this.props.showDenyAddModal}/>
+        <ConfirmPasswordAddModal show={this.props.showConfirmAddPassword} title={this.title} performer={this.performer}/>
+        <WrongPasswordAddModal show={this.props.showWrongPasswordAddModal}/>
+      </div>)
+   }
+   else{
+	return(
+    <div id="addItems">
+      <AddModal show={this.props.showAddModal}/>
+      <DenyAddModal show={this.props.showDenyAddModal}/>
+      <ConfirmPasswordAddModal show={this.props.showConfirmAddPassword} title={this.title} performer={this.performer}/>
+      <WrongPasswordAddModal show={this.props.showWrongPasswordAddModal}/>
     </div>
 
-	)
+	)}
 }
 }
 

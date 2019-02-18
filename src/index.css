@@ -1,7 +1,7 @@
 body {
-	display:flex;
+
 	
-margin:auto;
+
 
  
   font-family: 'Staatliches',sans-serif;
@@ -50,11 +50,12 @@ input{
 }
 
 .modal {
-  width:93%;
+ 
   height:250px;
-  position: absolute;
+  max-width:320px;
   top:10px;
   background-color: #353232;
+  position: absolute;
   /*margin: 9px auto;*/
   z-index: 2;
   border: solid pink  2px;
@@ -65,10 +66,19 @@ input{
   justify-content: center;
   margin:0 5px 0 5px;
   padding-left: 10px;
+  margin-left:-170px;
+    left:50%;
+ 
 
   
 }
 
 .modal div{
   padding-bottom: 20px;
+}
+
+#addItems{
+  display:flex;
+  flex-direction: row;
+  
 }
