@@ -18,10 +18,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    
     setSongs: songs=>dispatch(setSongs(songs)),
     showList:flag=>dispatch(showList(flag))
-    
   };
 };
 
@@ -29,11 +27,9 @@ class ConnectedSong extends Component{
 
 	constructor(props) {
     super(props);
-   
     this.deleteMethod=this.deleteMethod.bind(this);
     this.setData=this.setData.bind(this);
     this.fetchSongs=this.fetchSongs.bind(this);
-
   }
 
   setData(responseData){
@@ -74,7 +70,7 @@ class ConnectedSong extends Component{
 	render(){
 
     const modals=<div>
-      <DeleteModal show={this.props.item.deleteSong} id={this.props.item.id}/>
+    <DeleteModal show={this.props.item.deleteSong} id={this.props.item.id}/>
     <DenyModal show={this.props.item.denyDelete} id={this.props.item.id}/>
     <ConfirmPasswordModal show={this.props.item.confirmPassword} id={this.props.item.id}/>
     <WrongPasswordModal show={this.props.item.wrongPassword} id={this.props.item.id}/>
@@ -88,17 +84,12 @@ if(this.props.showApp){
 music_note
 </i>
       <div className="songTitle">{this.props.item.title}</div>
-      
       <div className="songPerformer">{this.props.item.performer}</div>
-      
       <div className="deleteButton" onClick={this.deleteMethod}><i className="material-icons">
         clear
       </i></div>
-      
-      
     </div>
     {modals}
-    
     </div>
 
   )

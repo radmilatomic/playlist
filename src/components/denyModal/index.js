@@ -20,9 +20,7 @@ class ConnectedDenyModal extends Component{
 
 	constructor(props) {
     super(props);
-    
     this.denyOK=this.denyOK.bind(this);
-  
     this.modalRoot = document.getElementById('modal-root');
   }
 
@@ -40,12 +38,8 @@ class ConnectedDenyModal extends Component{
     this.props.showList(true);
   }
 
-   
-
 	render(){
     if(this.props.show===true){
-      
-      
       return ReactDOM.createPortal(
         <div className='modal' id="denyModal">
           <div className="buttonsWrapper">Ma nema veze, brisanje je ionako bezveze</div>

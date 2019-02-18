@@ -20,14 +20,12 @@ const mapStateToProps = state => {
 
 
 class ConnectedSongList extends Component{
-
 	setData(responseData){
   console.log(responseData);
   this.props.setSongs(responseData); 
  }
 
 componentDidMount(){
-  
    const url=new URL('https://radmilatomic.pythonanywhere.com/api/songs')
    const request=new Request(url,{
     method:'GET',

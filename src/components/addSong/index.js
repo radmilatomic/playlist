@@ -9,7 +9,6 @@ import './style.css'
 
 const mapDispatchToProps = dispatch => {
   return {
-    
     setSongs: songs=>dispatch(setSongs(songs)),
     showAddModalAction:flag=>dispatch(showAddModalAction(flag)),
      showList:flag=>dispatch(showList(flag))
@@ -38,7 +37,6 @@ class ConnectedAddSong extends Component{
      this.clearInput=this.clearInput.bind(this);
      this.performer="";
      this.title="";
-     
   }
 
   setData(responseData){
@@ -49,15 +47,11 @@ class ConnectedAddSong extends Component{
  setRef(title,performer) {
         this.performer= performer;
         this.title=title;
-        
-        
     }
 
   clearInput(){
     this.inputTitle.value="";
     this.inputPerformer.value="";
-   
-
   }
 
 
@@ -77,25 +71,12 @@ class ConnectedAddSong extends Component{
 		console.log("song will be added here");
 		e.preventDefault();
     this.setRef(this.inputTitle.value,this.inputPerformer.value);
-
-   //  var form=new FormData(document.getElementById('form'))
-   // const url=new URL('https://radmilatomic.pythonanywhere.com/api/addsong')
-   // const request=new Request(url,{
-   //  method:'POST',
-   //  body:form,
-   //  mode:'cors'
-   // });
-   // fetch(request).then(()=>this.fetchSongs())
-   //   .catch(function(error){console.log(error);})
-      //this.inputTitle.value="";
-      //this.inputPerformer.value="";
-     this.props.showAddModalAction(true);
-     this.props.showList(false);
+    this.props.showAddModalAction(true);
+    this.props.showList(false);
 
    
 	}
 	render(){
-    
       const add=<form  id="add-form">
     <div className="addWrapper">
       <div className="label">Title:</div>
@@ -106,7 +87,6 @@ class ConnectedAddSong extends Component{
     <input name="performer" id="performer" ref={(a) => this.inputPerformer = a}></input>
     </div>
     <input id="addSong" type ="submit" value ="ADD" onClick={(this.addSong)}/>
-    
     </form>
    
    if(this.props.showApp){

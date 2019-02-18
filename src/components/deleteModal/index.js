@@ -2,20 +2,16 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom';
 import { connect } from "react-redux";
 import {setSongs} from "../../actions";
-import './style.css';
+
 
 const mapStateToProps = state => {
   return { songs: state.songs,
-        
-            
-             };
+         };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    
     setSongs: songs=>dispatch(setSongs(songs)),
-    
   };
 };
 
@@ -25,7 +21,6 @@ class ConnectedDeleteModal extends Component{
     super(props);
     this.exitDelete=this.exitDelete.bind(this);
     this.ahamMethod=this.ahamMethod.bind(this);
-  
     this.modalRoot = document.getElementById('modal-root');
   }
 
@@ -57,8 +52,6 @@ class ConnectedDeleteModal extends Component{
 
 	render(){
     if(this.props.show){
-      
-      
       return ReactDOM.createPortal(
         <div className='modal' id="delete-form">
           <div className="buttonsWrapper">Je l ti Rada dala sifru za brisanje?</div>

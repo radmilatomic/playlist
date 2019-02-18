@@ -8,8 +8,6 @@ body {
   justify-content: center;
 }
 
-
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -24,13 +22,6 @@ input{
   margin:10px;
 }
 
-#title{
-  
-}
-
-#performer{
-
-}
 
 .addWrapper{
   display:flex;
@@ -48,7 +39,6 @@ input{
   top:10px;
   background-color: #353232;
   position: absolute;
-  /*margin: 9px auto;*/
   z-index: 2;
   border: solid pink  2px;
   border-radius: 10px;
@@ -80,7 +70,6 @@ input{
   height:40px;
   padding:0 20px 0 20px;
   border-radius: 5px;
-
 }
 
 .buttonDetails:hover{
@@ -95,16 +84,11 @@ input{
   text-align: center;
 }
 
-input[type='password']{
-
-}
-
 .enterPassword{
   font-size: 18px;
   margin:10px;
   height:40px;
   padding:0 20px 0 20px;
   border-radius: 5px;
-
 }
 

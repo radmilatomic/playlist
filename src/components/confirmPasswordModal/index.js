@@ -10,7 +10,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    
     setSongs: songs=>dispatch(setSongs(songs)),
     showList:flag=>dispatch(showList(flag))
   };
@@ -48,9 +47,9 @@ class ConnectedConfirmPasswordModal extends Component{
     console.log(this.inputPassword.value);
     if(this.inputPassword.value==="sifrujelakoprovaliti"){
       const url=new URL('https://radmilatomic.pythonanywhere.com/api/deletesong/'+this.props.id)
-     const request=new Request(url,{
-     method:'GET',
-     mode:'no-cors'
+      const request=new Request(url,{
+      method:'GET',
+      mode:'no-cors'
    });
 
    fetch(request).then(()=>this.fetchSongs())
@@ -64,7 +63,7 @@ class ConnectedConfirmPasswordModal extends Component{
       }
     });
     this.props.setSongs(newSongs);
-     this.props.showList(true);
+    this.props.showList(true);
     }
     else{
       console.log("nije dobra sifra");
@@ -80,13 +79,8 @@ class ConnectedConfirmPasswordModal extends Component{
     }
    
   }
-
-   
-
 	render(){
     if(this.props.show===true){
-      
-      
       return ReactDOM.createPortal(
         <div className='modal' id="confirmPasswordModal">
           <div className="buttonsWrapper">Da cujem, koja je sifra</div>
@@ -104,5 +98,4 @@ class ConnectedConfirmPasswordModal extends Component{
 }
 
 const ConfirmPasswordModal=connect(mapStateToProps,mapDispatchToProps)(ConnectedConfirmPasswordModal)
-
 export default ConfirmPasswordModal

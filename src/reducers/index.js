@@ -30,7 +30,6 @@ const rootReducer=(state=initialState, action)=>{
     case "SHOW_WRONG_PASSWORD_ADD_MODAL":
     return Object.assign({},state, {showWrongPasswordAddModal:action.flag});
 
-
     default:
     return state;
 

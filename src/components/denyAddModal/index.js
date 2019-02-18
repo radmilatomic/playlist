@@ -10,7 +10,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    
     setSongs: songs=>dispatch(setSongs(songs)),
     showList:flag=>dispatch(showList(flag)),
     showDenyAddModalAction:flag=>dispatch(showDenyAddModalAction(flag)),
@@ -22,9 +21,7 @@ class ConnectedDenyAddModal extends Component{
 
 	constructor(props) {
     super(props);
-    
     this.denyOK=this.denyOK.bind(this);
-  
     this.modalRoot = document.getElementById('modal-root');
   }
 
@@ -34,12 +31,8 @@ class ConnectedDenyAddModal extends Component{
     this.props.showList(true);
   }
 
-   
-
 	render(){
     if(this.props.show===true){
-      
-      
       return ReactDOM.createPortal(
         <div className='modal' id="denyModal">
           <div className="buttonsWrapper">Ma nema veze, dodavanje je ionako bezveze</div>

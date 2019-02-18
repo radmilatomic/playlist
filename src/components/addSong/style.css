@@ -9,7 +9,6 @@
 #addSong:hover{
 	background-color:pink;
 	border-radius: 5px;
-
 }
 
 #title, #performer{
@@ -22,7 +21,6 @@
 	border: solid pink 2px;
 	color:white;
 	outline: none;
-
 }
 
 .label{

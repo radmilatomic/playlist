@@ -5,8 +5,6 @@ import {setSongs, showList, showWrongAddPasswordAction} from "../../actions";
 
 const mapStateToProps = state => {
   return { songs: state.songs,
-        
-            
              };
 };
 
@@ -24,8 +22,6 @@ class ConnectedWrongPasswordAddModal extends Component{
 	constructor(props) {
     super(props);
     this.accept=this.accept.bind(this);
-
-  
     this.modalRoot = document.getElementById('modal-root');
   }
 
@@ -35,12 +31,8 @@ class ConnectedWrongPasswordAddModal extends Component{
     this.props.showWrongAddPasswordAction(false);
   }
 
-   
-
 	render(){
     if(this.props.show){
-      
-      
       return ReactDOM.createPortal(
         <div className='modal' id="wrongPasswordInfo">
           <div className="buttonsWrapper">Ok, ne znas ipak sifru, al Rada nije to lepo ni sakrila, mozes lako da je provalis</div>

@@ -10,7 +10,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    
     setSongs: songs=>dispatch(setSongs(songs)),
     showList:flag=>dispatch(showList(flag)),
     showWrongAddPasswordAction:flag=>dispatch(showWrongAddPasswordAction(flag)),
@@ -50,15 +49,14 @@ class ConnectedConfirmPasswordAddModal extends Component{
     console.log(this.inputPassword.value);
     if(this.inputPassword.value==="sifrujelakoprovaliti"){
       console.log("sifra je dobra");
-       // var form=new FormData(document.getElementById('form'))
       var form=new FormData();
-       form.append("title",this.props.title);
-       form.append("performer", this.props.performer);
-   const url=new URL('https://radmilatomic.pythonanywhere.com/api/addsong')
-   const request=new Request(url,{
-    method:'POST',
-    body:form,
-    mode:'cors'
+      form.append("title",this.props.title);
+      form.append("performer", this.props.performer);
+      const url=new URL('https://radmilatomic.pythonanywhere.com/api/addsong')
+      const request=new Request(url,{
+        method:'POST',
+        body:form,
+        mode:'cors'
    });
    fetch(request).then(()=>this.fetchSongs())
      .catch(function(error){console.log(error);})
@@ -73,18 +71,14 @@ class ConnectedConfirmPasswordAddModal extends Component{
    
   }
 
-   
 
 	render(){
     if(this.props.show===true){
-      
-      
       return ReactDOM.createPortal(
         <div className='modal' id="confirmPasswordModal">
           <div className="buttonsWrapper">Da cujem, koja je sifra</div>
             <div className="buttonsWrapper">
               <input className="enterPassword" type="password" ref={(a) => this.inputPassword = a}></input>
-              
             </div>
             <input className="buttonDetails" type="submit" value="Submit" onClick={this.confirmPassword}></input>
         </div>,
