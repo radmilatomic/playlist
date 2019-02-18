@@ -66,20 +66,11 @@ class ConnectedSong extends Component{
     });
     this.props.setSongs(newSongs);
     this.props.showList(false);
-
-
-
-		// const url=new URL('https://radmilatomic.pythonanywhere.com/api/deletesong/'+this.props.id)
-  //   	const request=new Request(url,{
-  //   	method:'GET',
-  //   	mode:'no-cors'
-  //  });
-
-  //  fetch(request).then(()=>this.fetchSongs())
-  //    .catch(function(error){console.log(error);})
-
-   
 	}
+
+  editMethod(){
+    console.log("Song#editMethod");
+  }
 	render(){
 
     const modals=<div>
@@ -103,6 +94,7 @@ music_note
       <div class="deleteButton" onClick={this.deleteMethod}><i class="material-icons">
         clear
       </i></div>
+      
       
     </div>
     {modals}
