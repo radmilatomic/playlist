@@ -100,11 +100,11 @@ class ConnectedAddSong extends Component{
     <div>
 		<form  id="add-form">
     <div class="addWrapper">
-  		<div>Title:</div>
+  		<div class="label">Title:</div>
       <input name="title" id="title" ref={(a) => this.inputTitle = a}></input>
     </div>
     <div class="addWrapper">
-		<div>Performer:</div>
+		<div class="label">Performer:</div>
     <input name="performer" id="performer" ref={(a) => this.inputPerformer = a}></input>
     </div>
 		<input id="addSong" type ="submit" value ="ADD" onClick={(this.addSong)}/>

@@ -2,14 +2,23 @@
 	width:100px;
 	height:40px;
 	font-size: 20px;
+	margin-top:10px;
 }
 
 #addSong:hover{
 	background-color:pink;
 	border-radius: 5px;
+
 }
 
 #title, #performer{
 	height:35px;
+	font-size: 18px;
+	margin-right: 15px;
+	width:230px;
 
+}
+
+.label{
+	font-size: 16px;
 }
