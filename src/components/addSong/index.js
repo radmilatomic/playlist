@@ -5,6 +5,7 @@ import AddModal from "../addModal";
 import DenyAddModal from "../denyAddModal";
 import ConfirmPasswordAddModal from "../confirmPasswordAddModal";
 import WrongPasswordAddModal from "../wrongPasswordAddModal"
+import './style.css'
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -106,7 +107,7 @@ class ConnectedAddSong extends Component{
 		<div>Performer:</div>
     <input name="performer" id="performer" ref={(a) => this.inputPerformer = a}></input>
     </div>
-		<input id="addSong" type ="submit" value ="Add" onClick={(this.addSong)}/>
+		<input id="addSong" type ="submit" value ="ADD" onClick={(this.addSong)}/>
     
 		</form>
 
