@@ -59,6 +59,7 @@ class ConnectedSort extends Component{
 	}
 
 	render(){
+		if(this.props.showApp){
 		return (
 			<div>
 			<button className="sortButtons" onClick={this.sortByTitle}> sort by title <i className="material-icons" style={{color:"pink"}}>
@@ -69,6 +70,8 @@ keyboard_arrow_down
 </i></button>
 			</div>
 			)
+	}
+	else{ return null}
 	}
 
 }
