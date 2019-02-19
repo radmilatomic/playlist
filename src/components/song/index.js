@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom';
+
 import {setSongs, showList} from "../../actions";
 import { connect } from "react-redux";
 import './style.css';

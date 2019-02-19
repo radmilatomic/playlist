@@ -26,6 +26,7 @@ class ConnectedSongList extends Component{
  }
 
 componentDidMount(){
+  console.log("songList#ComponenDidMount");
    const url=new URL('https://radmilatomic.pythonanywhere.com/api/songs')
    const request=new Request(url,{
     method:'GET',
@@ -39,6 +40,7 @@ componentDidMount(){
 }
 
 	render(){
+    console.log("songList#render()");
 		return(
       <div>
       <DeleteModal/>

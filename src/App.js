@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
-import logo from './logo.svg';
+
 import './App.css';
 
-import Song from './components/song'
+
 import SongList from './components/songList'
 import AddSong from './components/addSong'
+import Sort from './components/sort'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
       <div className="App">
         <div id='heading'>RADINA PLAYLISTA</div>
        <AddSong/>
+       <Sort/>
        <SongList/>
         
 

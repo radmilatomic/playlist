@@ -61,7 +61,6 @@ input{
 #addItems{
   display:flex;
   flex-direction: row;
-  
 }
 
 .buttonDetails{
@@ -90,5 +89,23 @@ input{
   height:40px;
   padding:0 20px 0 20px;
   border-radius: 5px;
+}
+
+.sortButtons{
+  width:200px;
+  height:30px;
+  margin-top: 10px;
+  background-color: #353232;
+  border: solid pink 1px;
+  color:white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin:5px;
+}
+
+.sortButtons:hover{
+  background-color: pink;
+  cursor: pointer;
 }
 
