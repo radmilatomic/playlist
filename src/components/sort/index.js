@@ -63,10 +63,10 @@ class ConnectedSort extends Component{
 		return (
 			<div>
 			<button className="sortButtons" onClick={this.sortByTitle}> sort by title <i className="material-icons" style={{color:"pink"}}>
-keyboard_arrow_down
+unfold_more
 </i></button>
 			<button  className="sortButtons" onClick={this.sortByPerformer}>sort by performer <i className="material-icons" style={{color:"pink"}}>
-keyboard_arrow_down
+unfold_more
 </i></button>
 			</div>
 			)

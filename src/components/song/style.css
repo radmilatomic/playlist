@@ -2,7 +2,8 @@
 	display: flex;
 	align-content: center;
 	/*justify-content:space-between;*/
-	padding-top: 3px;
+	padding: 3px 0 3px 0;
+
 	border-bottom: solid 1px pink;
 }
 
@@ -12,6 +13,12 @@
 
 .songContainer > div{
 	padding-right: 20px;
+	
+	text-align: center;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 }
 
 .songTitle{
@@ -25,4 +32,5 @@
 .deleteButton:hover{
 	cursor:pointer;
 	color:pink;
+
 }
